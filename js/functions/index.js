@@ -47,9 +47,11 @@ exports.tesla369OCRImagem = functions.storage.bucket(bucketName).object().onChan
     const docId = filePath.split('.jpg')[0];
 
     const docRef  = admin.firestore().collection('photos').doc(docId);
-    //se entrar entrar png não faz nada
+    
+    //If enter enter png does nothing
     if (filePath.endsWith('.png')) return false;
-    //se entrar pdf não faz nada
+    
+    //if entering pdf does nothing
     if (!filePath.endsWith('.pdf')) return false;
 
     // Text Extraction
